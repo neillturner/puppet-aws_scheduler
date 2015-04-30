@@ -8,8 +8,8 @@ class aws_scheduler (
   $aws_secret_access_key = undef,
   $aws_region            = undef, 
   $tag                   = 'schedule'
-  $exclude               = '[]'
-  $default               = '{"mon": {"start": 5, "stop": 18},"tue": {"start": 5, "stop": 18},"wed": {"start": 5, "stop": 18},"thu": {"start": 5, "stop": 18}, "fri": {"start": 5, "stop": 18}}'  
+  $exclude               = '[]',
+  $default               = '{"mon": {"start": 5, "stop": 18},"tue": {"start": 5, "stop": 18},"wed": {"start": 5, "stop": 18},"thu": {"start": 5, "stop": 18}, "fri": {"start": 5, "stop": 18}}',  
   $script_path           = '/usr/sbin',
   $cron_minute           = '10',
   $cron_hour             = '*',
