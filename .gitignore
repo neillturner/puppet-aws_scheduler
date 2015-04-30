@@ -1,0 +1,9 @@
+Gemfile.lock
+*.swp
+.librarian/
+.tmp/
+.vagrant
+modules/
+pkg/*
+spec/fixtures/manifests/
+spec/fixtures/modules/
