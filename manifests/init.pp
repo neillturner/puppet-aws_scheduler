@@ -7,7 +7,7 @@ class aws_scheduler (
   $aws_access_key_id     = undef, 
   $aws_secret_access_key = undef,
   $aws_region            = undef, 
-  $tag                   = 'schedule'
+  $tag                   = 'schedule',
   $exclude               = '[]',
   $default               = '{"mon": {"start": 5, "stop": 18},"tue": {"start": 5, "stop": 18},"wed": {"start": 5, "stop": 18},"thu": {"start": 5, "stop": 18}, "fri": {"start": 5, "stop": 18}}',  
   $script_path           = '/usr/sbin',
