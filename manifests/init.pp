@@ -36,11 +36,11 @@ class aws_scheduler (
     require => File['/etc/aws-scheduler.cfg'],
   }
   
-  cron::task{ 'aws scheduler':
-    command => "${script_path}/aws-scheduler.py >> ${log}",
-    minute  => $cron_minute,
-    hour    => $cron_hour,
-    require => File["${script_path}/aws-scheduler.py"],
-  }
+ # cron::task{ 'aws scheduler':
+ #  command => "${script_path}/aws-scheduler.py >> ${log}",
+ #  minute  => $cron_minute,
+ #  hour    => $cron_hour,
+ #  require => File["${script_path}/aws-scheduler.py"],
+ # }
 
 }
