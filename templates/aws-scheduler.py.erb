@@ -89,7 +89,7 @@ def check():
                 schedule = json.loads(data)
  
                 try:
-                    if hh == schedule[day]['start'] and not instance.state == 'running':
+                    if hh >= schedule[day]['start'] and not instance.state == 'running':
                         logger.info("Starting instance \"%s\"." %(instance.id))
                         started.append(instance.id)
                         ec2.start_instances(instance_ids=[instance.id])
@@ -97,7 +97,7 @@ def check():
                     pass # catch exception if 'start' is not in schedule.
  
                 try:
-                    if hh == schedule[day]['stop'] and instance.state == 'running':
+                    if hh >= schedule[day]['stop'] and instance.state == 'running':
                         logger.info("Stopping instance \"%s\"." %(instance.id))
                         stopped.append(instance.id)
                         ec2.stop_instances(instance_ids=[instance.id])
