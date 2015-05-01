@@ -5,7 +5,9 @@
 ## Description
 
      Install aws scheduler - stop and start services according to schedule.
-     This Puppet module will install aws-scheduler             [http://www.4synergy.nl/auto-start-stop-ec2-instances/](http://www.4synergy.nl/auto-start-stop-ec2-instances/). Tested on Centos 6. 
+     This Puppet module will install aws-scheduler.
+     [http://www.4synergy.nl/auto-start-stop-ec2-instances/](http://www.4synergy.nl/auto-start-stop-ec2-instances/).
+     Tested on Centos 6. 
      It is a python script to runs regularly in cron that looks at all your instances for a
      tag "schedule" that contains a json string giving the stop and start schedule hour for mon to fri.
      it will them make sure the instance is stopped or started as per the scedule.
