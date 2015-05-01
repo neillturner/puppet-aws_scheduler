@@ -4,13 +4,13 @@
   "source": "https://github.com/neillturner/puppet-aws_scheduler",
   "author": "Neill Turner",
   "license": "Apache-2.0",
-  "summary": "Install aws scheduler - stop and start services according to schedule",
-  "description": "aws scheduler - stop and start services according to schedule",
+  "summary": "aws scheduler - stop and start services according to schedule and save on aws costs.",
+  "description": "aws scheduler - stop and start services according to schedule and save on aws costs.",
   "project_page": "https://github.com/neillturner/puppet-aws_scheduler",
   "source": "https://github.com/neillturner/puppet-aws_scheduler.git",
   "issues_url": "https://github.com/neillturner/puppet-aws_scheduler/issues",
   "dependencies": [
-    { "name": "stahnma/epel", "version_requirement": ">= 1.0.0 <2.0.0" }  
+    { "name": "stahnma/epel" }
   ],
   "operatingsystem_support": [
     {
@@ -38,8 +38,4 @@
       "operatingsystemrelease": [ "10.04", "12.04", "14.04" ]
     }
   ],
-  "requirements": [
-    { "name": "pe", "version_requirement": "3.x" },
-    { "name": "puppet", "version_requirement": "3.x" }
-  ]
 }

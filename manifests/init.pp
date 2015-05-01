@@ -14,6 +14,8 @@ class aws_scheduler (
   $cron_minute           = '10',
   $cron_hour             = '*',
   $log                   = '/var/log/aws-scheduler_cron.log',
+  $proxy                 = undef,
+  $proxy_port            = undef,
 ) {
 
   class { 'aws_scheduler::deps': }
@@ -31,16 +33,25 @@ class aws_scheduler (
     ensure  => 'file',
     owner   => root,
     group   => root,
-    mode    => '0700',
+    mode    => '0600',
     content => template('aws_scheduler/aws-scheduler.py.erb'),
     require => File['/etc/aws-scheduler.cfg'],
   }
   
- # cron::task{ 'aws scheduler':
- #  command => "${script_path}/aws-scheduler.py >> ${log}",
- #  minute  => $cron_minute,
- #  hour    => $cron_hour,
- #  require => File["${script_path}/aws-scheduler.py"],
- # }
+  file { '/etc/boto.cfg':
+    ensure  => 'file',
+    owner   => root,
+    group   => root,
+    mode    => '0600',
+    content => template('aws_scheduler/boto.cfg.erb'),
+    require => File["${script_path}/aws-scheduler.py"],
+  }
+
+  cron::task{ 'aws scheduler':
+   command => "/usr/bin/python ${script_path}/aws-scheduler.py  check >> ${log}",
+   minute  => $cron_minute,
+   hour    => $cron_hour,
+   require => File['/etc/boto.cfg'],
+  }
 
 }

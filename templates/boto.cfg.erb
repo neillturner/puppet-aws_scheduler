@@ -1,0 +1,10 @@
+[Boto]
+debug = 0
+num_retries = 10
+
+<% if @proxy %>
+proxy = <%=@proxy%>
+<% end %>
+<% if @proxy_port %>
+proxy_port = <%=@proxy_port%>
+<% end %>
