@@ -26,9 +26,9 @@
         aws_access_key_id     => 'MYAWSACCESSKEYID',
         aws_secret_access_key => 'MYAWSSECRETACESSKEY',
         aws_region            => 'MYAWSREGION',
-        tag                   => 'schedule'
-        exclude               => '[]'
-        default               => '{"mon": {"start": 5, "stop": 18},"tue": {"start": 5, "stop": 18},"wed": {"start": 5, "stop": 18},"thu": {"start": 5, "stop": 18}, "fri": {"start": 5, "stop": 18}}'  
+        tag                   => 'schedule',
+        exclude               => '[]',
+        default               => '{"mon": {"start": 5, "stop": 18},"tue": {"start": 5, "stop": 18},"wed": {"start": 5, "stop": 18},"thu": {"start": 5, "stop": 18}, "fri": {"start": 5, "stop": 18}}',  
         script_path           => '/usr/sbin',
         cron_minute           => '10',
         cron_hour             => '*',
