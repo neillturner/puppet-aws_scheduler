@@ -18,7 +18,7 @@
 
 `puppet module install --modulepath /path/to/puppet/modules neillturner-aws_scheduler`
 
-'or add to Puppetfile:   mod "neillturner/aws_scheduler"'
+`or add to Puppetfile:   mod "neillturner/aws_scheduler"`
 
 ## Usage
 
