@@ -4,7 +4,7 @@
 
 ## Description
 
-     aws scheduler - stop and start services according to schedule.
+     aws scheduler - stop and start services according to schedule to save aws costs.
      
      This Puppet module will install aws-scheduler.
      See http://www.4synergy.nl/auto-start-stop-ec2-instances/.
