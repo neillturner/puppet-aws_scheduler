@@ -10,16 +10,16 @@ class aws_scheduler::deps::debian {
     package { 'python-pip': ensure => installed }
   }
 
-  package { 'boto': 
-      require => Package['python-pip'],
-      ensure  => latest,
-      provider => pip,
+  package { 'boto':
+    ensure   => latest,
+    require  => Package['python-pip'],
+    provider => pip,
   }
   
-  package { 'docopt': 
-      require => Package['python-pip'],
-      ensure  => latest,
-      provider => pip,
-  }    
+  package { 'docopt':
+    ensure   => latest,
+    require  => Package['python-pip'],
+    provider => pip,
+  }
   
 }

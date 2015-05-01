@@ -4,12 +4,12 @@
 #
 #
 class aws_scheduler (
-  $aws_access_key_id     = undef, 
+  $aws_access_key_id     = undef,
   $aws_secret_access_key = undef,
-  $aws_region            = undef, 
+  $aws_region            = undef,
   $tag                   = 'schedule',
   $exclude               = '[]',
-  $default               = '{"mon": {"start": 5, "stop": 18},"tue": {"start": 5, "stop": 18},"wed": {"start": 5, "stop": 18},"thu": {"start": 5, "stop": 18}, "fri": {"start": 5, "stop": 18}}',  
+  $default               = '{"mon": {"start": 5, "stop": 18},"tue": {"start": 5, "stop": 18},"wed": {"start": 5, "stop": 18},"thu": {"start": 5, "stop": 18}, "fri": {"start": 5, "stop": 18}}',
   $script_path           = '/usr/sbin',
   $cron_minute           = '10',
   $cron_hour             = '*',
@@ -48,10 +48,10 @@ class aws_scheduler (
   }
 
   cron::task{ 'aws scheduler':
-   command => "/usr/bin/python ${script_path}/aws-scheduler.py  check >> ${log}",
-   minute  => $cron_minute,
-   hour    => $cron_hour,
-   require => File['/etc/boto.cfg'],
+    command => "/usr/bin/python ${script_path}/aws-scheduler.py  check >> ${log}",
+    minute  => $cron_minute,
+    hour    => $cron_hour,
+    require => File['/etc/boto.cfg'],
   }
 
 }

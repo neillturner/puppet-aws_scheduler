@@ -1,6 +1,7 @@
 # == Class: aws_scheduler::deps
 #
-# This module manages aws_scheduler dependencies and should *not* be called directly.
+# This module manages aws_scheduler dependencies and
+# should *not* be called directly.
 #
 # 
 class aws_scheduler::deps {
