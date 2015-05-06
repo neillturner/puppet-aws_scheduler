@@ -73,8 +73,8 @@ def check():
     reservations = ec2.get_all_instances(args['<instance_id>'])
  
     # Get current day + hour (using GMT by defaul if time parameter not set to local)
-    time = config.get("schedule","time")
-    if time == 'local':
+    time_zone = config.get("schedule","time")
+    if time_zone == 'local':
         hh  = int(time.strftime("%H", time.localtime()))
         day = time.strftime("%a", time.localtime()).lower()
         logger.info("-----> Checking for instances to start or stop for localtime hour \"%s\"", hh)
