@@ -1,6 +1,6 @@
 {
   "name": "neillturner/aws_scheduler",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "source": "https://github.com/neillturner/puppet-aws_scheduler",
   "author": "Neill Turner",
   "license": "Apache-2.0",

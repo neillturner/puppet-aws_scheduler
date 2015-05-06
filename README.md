@@ -29,6 +29,7 @@
         tag                   => 'schedule',
         exclude               => '[]',
         default               => '{"mon": {"start": 5, "stop": 18},"tue": {"start": 5, "stop": 18},"wed": {"start": 5, "stop": 18},"thu": {"start": 5, "stop": 18}, "fri": {"start": 5, "stop": 18}}',  
+        time                  => 'gmt',
         script_path           => '/usr/sbin',
         cron_minute           => '10',
         cron_hour             => '*',
@@ -47,6 +48,7 @@
      default               json schedule array to default to (only used with the --force option)
                            '{"mon": {"start": 5, "stop": 18},"tue": {"start": 5, "stop": 18},"wed": {"start": 5, "stop": 18},"thu": {"start": 5, "stop": 18}, "fri": {"start": 5, "stop": 18}}'  
      script_path           path to store aws-scheduler.py script defaults to '/usr/sbin',
+     time                  time used for checking against schedule defaults to 'gmt' can also be 'local'
      cron_minute           cron minute to run the script defaults to '10' i.e. 10 past the hour,
      cron_hour             cron hour to run the script defaults to '*'    i.e. every hour,
      log                   log for cron defaults to '/var/log/aws-scheduler_cron.log' (aws-scheduler ptyhob script logs to /var/log/aws-scheduler.log) 

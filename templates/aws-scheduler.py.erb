@@ -72,10 +72,17 @@ def check():
     # Get all reservations.
     reservations = ec2.get_all_instances(args['<instance_id>'])
  
-    # Get current day + hour (using GMT)
-    hh  = int(time.strftime("%H", time.gmtime()))
-    day = time.strftime("%a", time.gmtime()).lower()
- 
+    # Get current day + hour (using GMT by defaul if time parameter not set to local)
+    time = config.get("schedule","time")
+    if time == 'local':
+        hh  = int(time.strftime("%H", time.localtime()))
+        day = time.strftime("%a", time.localtime()).lower()
+        logger.info("-----> Checking for instances to start or stop for localtime hour \"%s\"", hh)
+    else:
+        hh  = int(time.strftime("%H", time.gmtime()))
+        day = time.strftime("%a", time.gmtime()).lower()
+        logger.info("-----> Checking for instances to start or stop for gmt hour \"%s\"", hh)
+
     started = []
     stopped = []
  
