@@ -14,13 +14,13 @@ class aws_scheduler::deps::redhat {
   }
   
   package { 'boto':
-    ensure   => latest,
+    ensure   => installed,
     require  => Package['python-pip'],
     provider => pip,
   }
   
   package { 'docopt':
-    ensure   => latest,
+    ensure   => installed,
     require  => Package['python-pip'],
     provider => pip,
   }
