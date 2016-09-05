@@ -43,10 +43,14 @@ def init():
     aws_region     = config.get('aws', 'region','')
  
     global ec2
-    ec2 = boto.ec2.connect_to_region(
-            region_name = aws_region,
-            aws_access_key_id = aws_access_key,
-            aws_secret_access_key = aws_secret_key)
+    if aws_access_key != '':
+        ec2 = boto.ec2.connect_to_region(
+                region_name = aws_region,
+                aws_access_key_id = aws_access_key,
+                aws_secret_access_key = aws_secret_key)
+   else:
+        ec2 = boto.ec2.connect_to_region(
+                region_name = aws_region)
  
 #
 # Add default 'schedule' tag to instance.
