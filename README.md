@@ -55,3 +55,4 @@
      proxy                 proxy host to use when accessing aws           i.e. myproxy.com
      proxy_port            port of proxy                                  i.e. 3128
 
+the aws_access_key_id and aws_secret_access_key are optional and allow the use of iam instance profiles.
