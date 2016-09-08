@@ -38,9 +38,9 @@ def init():
     logger.addHandler(handler)
  
     # Setup AWS connection
-    aws_access_key = config.get_with_default('aws','access_key','')
-    aws_secret_key = config.get_with_default('aws','secret_key','')
-    aws_region     = config.get_with_default('aws', 'region','')
+    aws_access_key = get_with_default('aws','access_key','')
+    aws_secret_key = get_with_default('aws','secret_key','')
+    aws_region     = get_with_default('aws', 'region','')
  
     global ec2
     if aws_access_key != '':
@@ -52,7 +52,7 @@ def init():
         ec2 = boto.ec2.connect_to_region(
                 region_name = aws_region)
 
-def get_with_default(section,name,default)
+def get_with_default(section,name,default):
     return config.get(section,name) if config.has_section(section) and config.has_option(section, name) else default
  
 #
